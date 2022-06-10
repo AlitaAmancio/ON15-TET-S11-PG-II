@@ -14,5 +14,9 @@ routes.get("/filtrar/:id", controller.findById)
 routes.get("/filtrarNome", controller.findByName)
 //rota para cadastrar clientes (POST)
 routes.post("/cadastrar", controller.registerClient)
+//rota para atualizar o cadastro do cliente (PUT)
+routes.put("/atualizar/:id", controller.updateClient)
+//rota para deletar o cadastro (DELETE)
+routes.delete("/excluir/:id", controller.deleteClient)
 
 module.exports = routes

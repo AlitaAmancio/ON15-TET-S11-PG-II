@@ -53,7 +53,7 @@ const findByName = (request, response) => {
         console.log(error)
     }
 }
-//cadastrar no sistema um paciente (POST)
+//cadastrar no sistema um cliente (POST)
 const registerClient = (request, response) => {
     try {
         const getBody = request.body
@@ -80,6 +80,60 @@ const registerClient = (request, response) => {
         console.log(error)
     }
 }
+//atualizar o cadastro de um cliente no sistema (PUT)
+const updateClient = (request, response) => {
+    try {
+        const getId = request.params.id
+        const getBody = request.body
+
+
+        const clientFound = clientes.find(cliente => cliente.clienteId == getId)
+
+        const index = clientes.indexOf(clientFound)
+       
+        getBody.clienteId == getId
+
+        clientes.splice(index, 1, getBody)
+
+        if(clientFound == undefined) {
+            throw new Error("Cliente não encontrado, pois o id não foi identificado.")
+        }
+
+        response.status(200).json({
+            "mensagem": "Dados do cliente atualizados com sucesso.",
+            getBody
+        })
+    } catch (error) {
+        response.status(500).json({
+            message: error.message
+        })
+        console.log(error)
+    }
+}
+//deletar o cadastro de um cliente (DELETE)
+const deleteClient = (request, response) => {
+    try {
+        const getId = request.params.id
+        const clientFound = clientes.find(cliente => cliente.clienteId == getId)
+
+        const index = clientes.indexOf(clientFound)
+
+        clientes.splice(index, 1)
+
+        if(clientFound == undefined) {
+            throw new Error("Id não encontrado.")
+        }
+
+        response.status(200).json({
+            "mensagem": "Cliente excluido com sucesso."
+        })
+    } catch (error) {
+        response.status(500).json({
+            message: error.message
+        })
+        console.log(error)
+    }
+}
 
 
 
@@ -91,5 +145,7 @@ module.exports = {
     allClients,
     findById,
     findByName,
-    registerClient
+    registerClient,
+    updateClient,
+    deleteClient
 }
