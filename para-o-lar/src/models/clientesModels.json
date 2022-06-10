@@ -1,0 +1,38 @@
+[
+    {
+        "clienteId": 1,
+        "nome": "Fernanda",
+        "nomeSocial": "Henry",
+        "idade": 25,
+        "endereco": "Rua Logo Ali, 34",
+        "telefone": "(11) 11111-1111",
+        "cpf": "111.111.111-11"
+    },
+    {
+        "clienteId": 2,
+        "nome": "Joaquim",
+        "nomeSocial": "",
+        "idade": 32,
+        "endereco": "Rua Bem Proxima, 250",
+        "telefone": "(11) 11111-1111",
+        "cpf": "111.111.111-11"
+    },
+    {
+        "clienteId": 3,
+        "nome": "Eduardo",
+        "nomeSocial": "",
+        "idade": 28,
+        "endereco": "Rua Super Perto, 76",
+        "telefone": "(11) 11111-1111",
+        "cpf": "111.111.111-11"
+    },
+    {
+        "clienteId": 4,
+        "nome": "Geovana",
+        "nomeSocial": "",
+        "idade": 36,
+        "endereco": "Rua Ao Lado, 85",
+        "telefone": "(11) 11111-1111",
+        "cpf": "111.111.111-11"
+    }
+]
